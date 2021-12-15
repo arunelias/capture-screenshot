@@ -1,0 +1,20 @@
+{
+  "name": "Capture Screenshot",
+  "version": "1.0",
+  "description": "Bare minimum addon to capture a webpage screenshot",
+  "homepage_url": "https://github.com/arunelias/capture-screenshot",
+  "icons": {
+    "48": "icon.png"
+  },
+  "browser_action":{
+      "default_icon": "icon.png",
+      "default_title": "Capture Screenshot",
+      "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "manifest_version": 2
+}

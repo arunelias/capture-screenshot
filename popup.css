@@ -1,0 +1,14 @@
+.download {
+  position:absolute;
+  height: 32px;
+  width: 32px;
+  top: 16px;
+  right: 16px;
+  opacity: 0.3;
+  z-index: 2;
+  background: #FFF;
+  border-radius: 4px;
+}
+.download:hover {
+  opacity: 1;
+}
