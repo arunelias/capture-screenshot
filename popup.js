@@ -1,7 +1,7 @@
 chrome.runtime.sendMessage({ event: "Capture Screenshot" }, function(response) {
 	var screenshot = new Image();
 	screenshot.src =  response.dataUrl;
-	screenshot.style.width = "98vw";
+	screenshot.onload = function () { screenshot.style.width = "98vw"; }
 	document.body.appendChild(screenshot);
 	var link = document.createElement("a");
 	link.download = "Screenshot";
