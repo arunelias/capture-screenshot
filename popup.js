@@ -11,4 +11,17 @@ chrome.runtime.sendMessage({ event: "Capture Screenshot" }, function(response) {
 	download.className = "download";
 	link.appendChild(download);
 	document.body.appendChild(link);
+	var link = document.createElement("a");
+	link.href = "#";
+	link.onclick = async () => {
+		const data = await fetch(response.dataUrl);
+		const blob = await data.blob();
+		await navigator.clipboard.write([ new ClipboardItem({ [blob.type]: blob }) ]);
+		window.close();
+	};
+	var copy = new Image();
+	copy.src = "Copy.svg";
+	copy.className = "copy";
+	link.appendChild(copy);
+	document.body.appendChild(link);
 });
